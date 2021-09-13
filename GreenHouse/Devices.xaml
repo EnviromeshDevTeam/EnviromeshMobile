@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GreenHouse.Devices" >
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid RowSpacing="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <Label Text="   Device 1" Grid.Row="1" Grid.Column="1" FontSize="30"></Label>
+                <Button Text="Tap to see data" Grid.Row="2" Grid.Column="1" FontSize="13" Clicked="device1_clicked"/>
+            </Grid>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

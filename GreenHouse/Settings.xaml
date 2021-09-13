@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GreenHouse.Settings">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Preferences" FontSize="25" HorizontalTextAlignment="Center" Padding="50"/>
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Temperature Unit" FontSize="26" Grid.Row="0"/>
+                <Label Text="Fahrenheint To Celsius" FontSize="15" Grid.Row="1" Grid.Column="0"/>
+                <Switch x:Name="metricSwitch" IsToggled="False" Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="Theme" FontSize="26" Grid.Row="2" Grid.Column="0"/>
+                <Label Text="Dark Mode" FontSize="15" Grid.Row="3" Grid.Column="0"/>
+                <Switch x:Name="themeswitch" IsToggled="False" Grid.Row="3" Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
