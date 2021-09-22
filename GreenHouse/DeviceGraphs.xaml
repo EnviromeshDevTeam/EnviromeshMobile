@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="GreenHouse.DeviceGraphs">
+
+    <RefreshView>
+        <!--Overly Using StackLayouts for More than one content sets
+        Frames for Clear Coloring-->
+        <StackLayout>
+            
+            <!--Header Frame-->
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <StackLayout Orientation="Vertical">
+                    <!--Change title to dynamic text? e.g Device 1 or Device 2 ETC-->
+                    <Label x:Name="Label_DeviceTitle" Text="Device 1 Dashboard" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                    <!--Change title to dynamic text? e.g Device 1 or Device 2 ETC-->
+                    <Label x:Name="Label_CurrentTimescale" Text="Displaying 1H Timescale" HorizontalTextAlignment="Center" FontSize="Caption"/>
+                </StackLayout>
+            </Frame>
+        
+            <!--Timescale Frame (Grid of Timescale Buttons HORIZONTAL)-->
+            <Frame MinimumHeightRequest="60">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="Button_1H_Graphs" Text="1H" Grid.Column="0" Clicked="Button_1H_Graphs_Clicked"></Button>
+                    <Button x:Name="Button_4H_Graphs" Text="4H" Grid.Column="1" Clicked="Button_4H_Graphs_Clicked"></Button>
+                    <Button x:Name="Button_12H_Graphs" Text="12H" Grid.Column="2" Clicked="Button_12H_Graphs_Clicked"></Button>
+                    <Button x:Name="Button_24H_Graphs" Text="1D" Grid.Column="3" Clicked="Button_24H_Graphs_Clicked"></Button>
+                    <Button x:Name="Button_6D_Graphs" Text="6D" Grid.Column="4" Clicked="Button_6D_Graphs_Clicked"></Button>
+                    <Button x:Name="Button_30D_Graphs" Text="30D" Grid.Column="5" Clicked="Button_30D_Graphs_Clicked"></Button>
+                </Grid>
+            </Frame>
+
+            <!--GraphFrame-->
+            <Frame>
+                <ScrollView>
+                    <StackLayout>
+                        <!--Each Graph Bundled -->
+
+                        <!--Temperature-->
+                        <Frame>
+                            <StackLayout>
+                                <Label Text="Temperature" FontSize="Subtitle" FontAttributes="Bold"/>
+                                <Charts:ChartView Chart="{Binding Chart_Temp}" HeightRequest="250"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <!--Humidity-->
+                        <Frame>
+                            <StackLayout>
+                                <Label Text="Humidity" FontSize="Subtitle" FontAttributes="Bold"/>
+                                <Charts:ChartView Chart="{Binding Chart_Humidity}" HeightRequest="250"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <!--CO2-->
+                        <Frame>
+                            <StackLayout>
+                                <Label Text="CO2" FontSize="Subtitle" FontAttributes="Bold"/>
+                                <Charts:ChartView Chart="{Binding Chart_CO2}" HeightRequest="250"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <!--TVOC-->
+                        <Frame>
+                            <StackLayout>
+                                <Label Text="TVOC" FontSize="Subtitle" FontAttributes="Bold"/>
+                                <Charts:ChartView Chart="{Binding Chart_CO2}" HeightRequest="250"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <!--Soil Moisture-->
+                        <Frame>
+                            <StackLayout>
+                                <Label Text="Soil Moisture" FontSize="Subtitle" FontAttributes="Bold"/>
+                                <Charts:ChartView Chart="{Binding Chart_Moisture}" HeightRequest="250"/>
+                            </StackLayout>
+                        </Frame>
+                        
+                    </StackLayout>
+                </ScrollView>
+            </Frame>
+            
+        </StackLayout>
+    </RefreshView>
+</ContentPage>

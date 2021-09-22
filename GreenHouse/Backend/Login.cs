@@ -7,8 +7,9 @@ using System.Diagnostics;
 
 namespace GreenHouse
 {
-    public class ApiServices
+    public class Login
     {
+        //TODO: WISHLIST ITEM, NOT IMPLEMENTED
         public async Task LoginAsync(string userName, string password)
         {
             var keyValues = new List<KeyValuePair<string, string>>
