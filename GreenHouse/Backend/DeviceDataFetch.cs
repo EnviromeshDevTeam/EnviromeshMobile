@@ -13,12 +13,12 @@ namespace GreenHouse.Backend
     //ChartEntry Types DateTime, Value, Color 
     public class DeviceDataFetch
     {
-        private static readonly HttpClient client = new HttpClient();
+        public static readonly HttpClient client = new HttpClient();
 
-        private async Task<RootClass> APIFetchAsync()
+        public async Task<RootClass> APIFetchAsync()
         {
             var responseString = await client.GetStringAsync("http://enviromesh.tech/api/TempFakeDataCall");
-            RootClass Root = (RootClass)JsonConvert.DeserializeObject(responseString);
+            RootClass Root = JsonConvert.DeserializeObject<RootClass>(responseString);
 
             return Root;
             //Manipulate root here or return it?

@@ -5,11 +5,13 @@ using System.Text;
 
 namespace GreenHouse.Models
 {
-    class RootClass
+    public class RootClass
     {
         //Scales for multiple devices
 
          [JsonProperty("Devices")]
         public List<Device> Devices { get; set; }
+
+
     }
 }

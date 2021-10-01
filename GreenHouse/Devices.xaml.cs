@@ -15,13 +15,11 @@ namespace GreenHouse
         public Devices()
         {
             InitializeComponent();
-
-           
         }
 
-        private void device1_clicked(object sender, EventArgs e)
+        private async void device1_clicked(object sender, EventArgs e)
         {
-            
+            await Navigation.PushModalAsync(new DeviceGraphs ());
         }
     }
 }
