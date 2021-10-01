@@ -29,6 +29,9 @@ namespace GreenHouse.Models.EnvModels
 
         public List<ChartEntry> ReturnPlotPoints(string _chosenTimescale)
         {
+            //TODO: CHECK IF THIS IS WORKING
+            //UPDATE im 70 percent sure these are the functions not working
+            //Convert to one class and foreach loop iterate with switch case and enum Timescale?
             List<ChartEntry> ChartPlotPoints = new List<ChartEntry>();
             switch (_chosenTimescale)
             {

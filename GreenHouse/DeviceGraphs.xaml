@@ -33,18 +33,18 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="Button_1H_Graphs" Text="1H" Grid.Column="0" Clicked="Button_TimeScaleChange"></Button>
-                <Button x:Name="Button_4H_Graphs" Text="4H" Grid.Column="1" Clicked="Button_TimeScaleChange"></Button>
-                <Button x:Name="Button_12H_Graphs" Text="12H" Grid.Column="2" Clicked="Button_TimeScaleChange"></Button>
-                <Button x:Name="Button_24H_Graphs" Text="1D" Grid.Column="3" Clicked="Button_TimeScaleChange"></Button>
-                <Button x:Name="Button_6D_Graphs" Text="6D" Grid.Column="4" Clicked="Button_TimeScaleChange"></Button>
-                <Button x:Name="Button_30D_Graphs" Text="30D" Grid.Column="5" Clicked="Button_TimeScaleChange"></Button>
+                <Button x:Name="Button_1H_Graphs" Text="1H" FontSize="10" Grid.Column="0" Clicked="Button_TimeScaleChange"></Button>
+                <Button x:Name="Button_4H_Graphs" Text="4H" FontSize="10" Grid.Column="1" Clicked="Button_TimeScaleChange"></Button>
+                <Button x:Name="Button_12H_Graphs" Text="12H" FontSize="10" Grid.Column="2" Clicked="Button_TimeScaleChange"></Button>
+                <Button x:Name="Button_24H_Graphs" Text="24H" FontSize="10" Grid.Column="3" Clicked="Button_TimeScaleChange"></Button>
+                <Button x:Name="Button_6D_Graphs" Text="6D" FontSize="10" Grid.Column="4" Clicked="Button_TimeScaleChange"></Button>
+                <Button x:Name="Button_30D_Graphs" Text="30D" FontSize="10" Grid.Column="5" Clicked="Button_TimeScaleChange"></Button>
                 </Grid>
             </Frame>
 
             <!--GraphFrame-->
             <Frame>
-                <RefreshView x:Name="RefreshView_Dashboard" IsRefreshing="False" RefreshColor="Red">
+                <RefreshView x:Name="RefreshView_Dashboard" Refreshing="RefreshView_Dashboard_Refreshing" RefreshColor="Red">
                     <ScrollView>
                         <StackLayout>
                             <!--Each Graph Bundled -->
@@ -52,7 +52,7 @@
                             <!--Temperature-->
                             <Frame>
                                 <StackLayout>
-                                    <Label Text="Temperature" FontSize="Subtitle" FontAttributes="Bold"/>
+                                    <Label Text="Temperature (Celsius)" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
                                     <microcharts:ChartView x:Name="Chart_Temp" HeightRequest="250"/>
                                 </StackLayout>
                             </Frame>
@@ -60,7 +60,7 @@
                             <!--Humidity-->
                             <Frame>
                                 <StackLayout>
-                                    <Label Text="Humidity" FontSize="Subtitle" FontAttributes="Bold"/>
+                                    <Label Text="Humidity" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
                                     <microcharts:ChartView x:Name="Chart_Humidity" HeightRequest="250"/>
                                 </StackLayout>
                             </Frame>
@@ -68,7 +68,7 @@
                             <!--CO2-->
                             <Frame>
                                 <StackLayout>
-                                    <Label Text="CO2" FontSize="Subtitle" FontAttributes="Bold"/>
+                                    <Label Text="CO2 (PPM)" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
                                     <microcharts:ChartView x:Name="Chart_CO2" HeightRequest="250"/>
                                 </StackLayout>
                             </Frame>
@@ -76,7 +76,7 @@
                             <!--TVOC-->
                             <Frame>
                                 <StackLayout>
-                                    <Label Text="TVOC" FontSize="Subtitle" FontAttributes="Bold"/>
+                                    <Label Text="Air Contaminants (PPB)" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
                                     <microcharts:ChartView x:Name="Chart_TVOC" HeightRequest="250"/>
                                 </StackLayout>
                             </Frame>
@@ -84,7 +84,7 @@
                             <!--Soil Moisture-->
                             <Frame>
                                 <StackLayout>
-                                    <Label Text="Soil Moisture" FontSize="Subtitle" FontAttributes="Bold"/>
+                                <Label Text="Soil Moisture (%)" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
                                     <microcharts:ChartView x:Name="Chart_Moisture" HeightRequest="250"/>
                                 </StackLayout>
                             </Frame>
@@ -94,6 +94,5 @@
                 </RefreshView>
 
             </Frame>
-            
         </StackLayout>
 </ContentPage>

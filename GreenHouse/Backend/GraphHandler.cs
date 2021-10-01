@@ -13,7 +13,7 @@ namespace GreenHouse.Backend
 
         public List<List<ChartEntry>> GraphReadyData { get; set; } = new List<List<ChartEntry>>();
 
-        public RootClass RootReturn { get; set; } = new RootClass();
+        public Device unprocessedDeviceData { get; set; } = new Device();
 
 
         //Call Refresh On creation?
@@ -35,17 +35,20 @@ namespace GreenHouse.Backend
         //_timeScales currScale = _timeScales._1H;
 
         /// <summary>
-        /// TODO: Will this work>?????
-        /// Also should we Pop this into GraphHandler Class?
+        /// Only grab Device level of data here because that is given from Devices selection page
         /// </summary>
         ///
-        public async Task AsyncRefreshFromApi(int _deviceNum, string _timeScale)
+        public async Task AsyncRefreshFromApi(int _deviceNum)
         {
-            RootReturn = await DataObj.APIFetchAsync();
-            Device unprocessedDeviceData = RootReturn.Devices[_deviceNum - 1];
+            RootClass tempRootReturn = await DataObj.APIFetchAsync();
+            unprocessedDeviceData = tempRootReturn.Devices[_deviceNum - 1];
+        }
 
+        public void ReturnAllChartPlots(string _timeScale)
+        {
             List<ChartEntry> processed_TempData = unprocessedDeviceData.Temperature.ReturnPlotPoints(_timeScale);
-            //Not in GraphHandler, I think its happening before?
+            GraphReadyData.Clear();
+
             GraphReadyData.Add(processed_TempData);
 
             List<ChartEntry> processed_HumiData = unprocessedDeviceData.Humidity.ReturnPlotPoints(_timeScale);

@@ -32,7 +32,8 @@ namespace GreenHouse
             try
             {
                 GraphDataObj = new GraphHandler();
-                await GraphDataObj.AsyncRefreshFromApi(currDevice,currTimescale);
+                await GraphDataObj.AsyncRefreshFromApi(currDevice);
+                GraphDataObj.ReturnAllChartPlots(currTimescale);
                 UpdateUI();
             }
             catch (Exception e)
@@ -40,7 +41,6 @@ namespace GreenHouse
                 Console.WriteLine(e.Message);
                 await DisplayAlert("Error", $"{e.Message}", "OK!"); //TODO: Replace Reconnect with OK?
                                                                     //"No Internet", "Please reconnect and then pull down to refresh", "Reconnect!"
-
             }
         }
         public DeviceGraphs()
@@ -59,10 +59,9 @@ namespace GreenHouse
         private void UpdateUI()
         {
             
-            if (GraphDataObj == null || GraphDataObj.RootReturn == null)
+            if (GraphDataObj == null || GraphDataObj.unprocessedDeviceData == null)
             {
                 Console.WriteLine("No internet pull down to refresh");
-                System.Threading.Thread.Sleep(1000);
             }
 
             Label_DeviceTitle.Text = $"Device {currDevice} dashboard";
@@ -75,7 +74,9 @@ namespace GreenHouse
 
             //Will these overriding of baseChart templates work? or will we have to make new LineCharts
 
+            GraphDataObj.ReturnAllChartPlots(currTimescale);
 
+            //
             Chart_Temp.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[0], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 30, PointSize = 5 };
 
             Chart_Humidity.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[1], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 30, PointSize = 5 };
@@ -92,7 +93,7 @@ namespace GreenHouse
         {
             try
             {
-                await GraphDataObj.AsyncRefreshFromApi(currDevice, currTimescale);
+                await GraphDataObj.AsyncRefreshFromApi(currDevice);
                 UpdateUI();
                 RefreshView_Dashboard.IsRefreshing = false;
             }
@@ -108,11 +109,15 @@ namespace GreenHouse
         private void Button_TimeScaleChange(object sender, EventArgs e)
         {
             Button button = sender as Button;
+            RefreshView_Dashboard.IsRefreshing = true;
             currTimescale = button.Text;
+            GraphDataObj.ReturnAllChartPlots(button.Text
+                );
             UpdateUI();
+            RefreshView_Dashboard.IsRefreshing = false;
         }
 
-         private async void FailedConnectFunc (Exception _e)
+        private async void FailedConnectFunc (Exception _e)
             {
                 Console.WriteLine(_e.Message);
                 await DisplayAlert("No Internet", "Please reconnect and then pull down to refresh", "Reconnect!"); //TODO: Replace Reconnect with OK?
