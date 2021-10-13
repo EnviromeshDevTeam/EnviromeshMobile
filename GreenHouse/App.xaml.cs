@@ -8,6 +8,7 @@ namespace GreenHouse
     {
         public App()
         {
+
             InitializeComponent();
 
             MainPage = new NavigationPage();

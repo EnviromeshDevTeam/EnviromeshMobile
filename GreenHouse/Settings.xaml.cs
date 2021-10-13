@@ -16,5 +16,18 @@ namespace GreenHouse
         {
             InitializeComponent();
         }
+
+        private void themeswitch_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value)
+            {
+                App.Current.UserAppTheme = OSAppTheme.Dark;
+
+            }
+            else
+            {
+                App.Current.UserAppTheme = OSAppTheme.Light;
+            }
+        }
     }
 }

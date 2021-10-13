@@ -3,23 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GreenHouse.Devices" >
     <ContentPage.Content>
-        <StackLayout>
 
-            <Grid RowSpacing="50">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+        <StackLayout BackgroundColor="LightSkyBlue">
+            <Label Text="Please Choose Device to View Data" FontSize="25" HorizontalOptions="Center"/>
 
 
-                <Label Text="   Device 1" Grid.Row="1" Grid.Column="1" FontSize="30"></Label>
-                <Button Text="Tap to see data" Grid.Row="2" Grid.Column="1" FontSize="13" Clicked="device1_clicked"/>
-            </Grid>
+            <Frame HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="10" BackgroundColor="Black">
+                <Button Text="Device 1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Black" WidthRequest="80" Clicked="device1_clicked" FontSize="18"/>
+            </Frame>
+
+            <Frame HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="10" BackgroundColor="Black">
+                <Button Text="Device 2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Black" WidthRequest="80" Clicked="device1_clicked" FontSize="18"/>
+            </Frame>
+
+            <Frame HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="10" BackgroundColor="Black">
+                <Button Text="Device 3" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Black" WidthRequest="80" Clicked="device1_clicked" FontSize="18"/>
+            </Frame>
+
+            <Frame HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="0" BackgroundColor="Black">
+                <Button Text="+" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Black" WidthRequest="80" Clicked="device1_clicked" FontSize="50"/>
+            </Frame>
 
 
         </StackLayout>

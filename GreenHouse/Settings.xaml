@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GreenHouse.Settings">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="{AppThemeBinding Dark=Black, Light=DarkGray}">
             <Label Text="Preferences" FontSize="25" HorizontalTextAlignment="Center" Padding="50"/>
 
 
@@ -22,7 +22,7 @@
 
                 <Label Text="Theme" FontSize="26" Grid.Row="2" Grid.Column="0"/>
                 <Label Text="Dark Mode" FontSize="15" Grid.Row="3" Grid.Column="0"/>
-                <Switch x:Name="themeswitch" IsToggled="False" Grid.Row="3" Grid.Column="1"/>
+                <Switch x:Name="themeswitch" IsToggled="False" Grid.Row="3" Grid.Column="1" Toggled="themeswitch_Toggled"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
