@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
+	<style name="Theme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowActionBar">false</item>
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowBackground">@drawable/bg_color</item>
+	</style>
+
+	<style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+
+	<item name="colorAccent">#FF4081</item>
+
+	</style>
 
   <style name="MainTheme" parent="MainTheme.Base">
     <!-- As of Xamarin.Forms 4.6 the theme has moved into the Forms binary -->
@@ -14,5 +27,6 @@
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
     <!--<item name="colorAccent">#FF4081</item>-->
+  
   </style>
 </resources>
