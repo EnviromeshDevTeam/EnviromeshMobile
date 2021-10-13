@@ -21,5 +21,8 @@ namespace GreenHouse
         {
             await Navigation.PushModalAsync(new DeviceGraphs ());
         }
+
+        //testing 123
+        //testing 123
     }
 }
