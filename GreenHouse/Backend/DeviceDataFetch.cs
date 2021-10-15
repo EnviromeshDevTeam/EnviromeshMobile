@@ -19,7 +19,6 @@ namespace GreenHouse.Backend
         {
             var responseString = await client.GetStringAsync("http://enviromesh.tech/api/TempFakeDataCall");
             RootClass Root = JsonConvert.DeserializeObject<RootClass>(responseString);
-
             return Root;
             //Manipulate root here or return it?
         }
