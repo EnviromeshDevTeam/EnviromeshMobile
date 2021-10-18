@@ -29,46 +29,44 @@ namespace GreenHouse.Models.EnvModels
 
         public List<ChartEntry> ReturnPlotPoints(string _chosenTimescale)
         {
-            //TODO: CHECK IF THIS IS WORKING
-            //UPDATE im 70 percent sure these are the functions not working
-            //Convert to one class and foreach loop iterate with switch case and enum Timescale?
+            //TODO: Convert to one class and foreach loop iterate with switch case and enum Timescale?
             List<ChartEntry> ChartPlotPoints = new List<ChartEntry>();
             switch (_chosenTimescale)
             {
                 case "1H":
-                    foreach (PlotPoint item in _1H)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
-                    }
+                        ChartPlotPoints.Add(_1H[i].Convert2ChartEntry(i));
+                    } 
                     return ChartPlotPoints;
                 case "4H":
-                    foreach (PlotPoint item in _4H)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_4H[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 case "12H":
-                    foreach (PlotPoint item in _12H)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_12H[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 case "24H":
-                    foreach (PlotPoint item in _24H)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_24H[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 case "6D":
-                    foreach (PlotPoint item in _6D)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_6D[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 case "30D":
-                    foreach (PlotPoint item in _30D)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_30D[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 default:

@@ -5,8 +5,9 @@
             android:TabbedPage.ToolbarPlacement="Bottom"
             x:Class="GreenHouse.NavigationPage">
   <!--Pages can be added as references or inline-->
-    <greenhouse:Devices Title="Device" ></greenhouse:Devices>
-    <greenhouse:Settings Title="settings" IconImageSource="settingIcon.png"></greenhouse:Settings>
-    <greenhouse:Profile Title="Profile"></greenhouse:Profile>
+    <greenhouse:Devices Title="Device"></greenhouse:Devices><!--TODO: Ask aaron how to add colours to these buttons? they seem like pages-->
+    <greenhouse:Settings Title="Settings" BackgroundColor="{AppThemeBinding Dark=#BB86FC, Light=#263238}"></greenhouse:Settings>
+    <!--IconImageSource="settingIcon.png"-->
+    <greenhouse:Profile Title="Profile" BackgroundColor="{AppThemeBinding Dark=#BB86FC, Light=#263238}"></greenhouse:Profile>
 </TabbedPage>
     

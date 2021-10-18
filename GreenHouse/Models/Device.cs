@@ -9,10 +9,6 @@ namespace GreenHouse.Models
 {
     public class Device
     {
-        //Change each model to string instead of DateTime, Why do we need Datetime, String will work just as well
-
-        //TODO: Once working today. Also List of a new Object that these are based on called EnvDataObject ?
-
         [JsonProperty("Temperature")]
         public Temperature Temperature { get; set; }
 

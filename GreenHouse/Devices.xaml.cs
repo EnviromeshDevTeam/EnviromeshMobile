@@ -21,5 +21,16 @@ namespace GreenHouse
         {
             await Navigation.PushModalAsync(new DeviceGraphs ());
         }
+
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            device_NotImplemented();
+        }
+
+        private async void device_NotImplemented()
+        {
+            await DisplayAlert("Null", "This Device has not been implemented yet :'-( ", "OK!");
+        }
     }
 }

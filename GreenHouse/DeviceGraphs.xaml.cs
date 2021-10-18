@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace GreenHouse
@@ -39,23 +40,14 @@ namespace GreenHouse
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                await DisplayAlert("Error", $"{e.Message}", "OK!"); //TODO: Replace Reconnect with OK?
-                                                                    //"No Internet", "Please reconnect and then pull down to refresh", "Reconnect!"
+                await DisplayAlert("Error", $"{e.Message}", "OK!");
             }
         }
         public DeviceGraphs()
         {
-            //1. Load from API
-            //2. Then load Xaml form componenets
-
             InitializeComponent();
-            //TODO: Call GraphHandler here and pass in currTimescale
         }
 
-        
-
-        //TODO: Call Api Fetch in Update UI save time?
-        //TODO: Pass Timescale to GraphHandler here
         private void UpdateUI()
         {
             
@@ -64,31 +56,32 @@ namespace GreenHouse
                 Console.WriteLine("No internet pull down to refresh");
             }
 
-            Label_DeviceTitle.Text = $"Device {currDevice} dashboard";
+            Label_DeviceTitle.Text = $"Device {currDevice} Dashboard";
             Label_CurrentTimescale.Text = $"Displaying {currTimescale} Timescale";
 
 
-            //TODO: SET EACH GRAPH HERE
-
-            //LineChart baseChart = new LineChart { Entries = null, ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 30, PointSize=5};// Will IsAnimated breaK?
-
-            //Will these overriding of baseChart templates work? or will we have to make new LineCharts
-
             GraphDataObj.ReturnAllChartPlots(currTimescale);
 
-            //
-            Chart_Temp.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[0], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 30, PointSize = 5 };
+            SkiaSharp.SKColor dateColor = SkiaSharp.SKColor.Parse("ffffff");//fff or white for Dark mode and 000000 for Light mode
+            if (!Preferences.Get("settings_Theme", false))
+            {
+                dateColor = SkiaSharp.SKColor.Parse("000000");
+            }
 
-            Chart_Humidity.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[1], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 30, PointSize = 5 };
+            SkiaSharp.SKColor transparentCol = SkiaSharp.SKColor.Parse("#00ffffff");
 
-            Chart_CO2.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[2], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 30, PointSize = 5 };
 
-            Chart_TVOC.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[3], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 30, PointSize = 5 };
+            Chart_Temp.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[0],  ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 35, PointSize = 25, LabelColor= dateColor, BackgroundColor = transparentCol };
 
-            Chart_Moisture.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[4], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 30, PointSize = 5 };
+            Chart_Humidity.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[1], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 35, PointSize = 25, LabelColor = dateColor, BackgroundColor = transparentCol };
+
+            Chart_CO2.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[2], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 35, PointSize = 25, LabelColor = dateColor, BackgroundColor = transparentCol };
+
+            Chart_TVOC.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[3], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 35, PointSize = 25, LabelColor = dateColor, BackgroundColor = transparentCol };
+
+            Chart_Moisture.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[4], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 35, PointSize = 25, LabelColor = dateColor, BackgroundColor = transparentCol };
         }
 
-        //TODO NOT SET TO AN INSTANCE OF OBJECT
         private async void RefreshView_Dashboard_Refreshing(object sender, EventArgs e)
         {
             try
@@ -104,8 +97,6 @@ namespace GreenHouse
             }
         }
 
-        //TODO: Maybe just one Eventhandler for the buttons and we detect what string is passed through
-
         private void Button_TimeScaleChange(object sender, EventArgs e)
         {
             Button button = sender as Button;
@@ -120,7 +111,7 @@ namespace GreenHouse
         private async void FailedConnectFunc (Exception _e)
             {
                 Console.WriteLine(_e.Message);
-                await DisplayAlert("No Internet", "Please reconnect and then pull down to refresh", "Reconnect!"); //TODO: Replace Reconnect with OK?
+                await DisplayAlert("No Internet", "Please reconnect and then pull down to refresh", "Ok!"); 
     }
 }
 }

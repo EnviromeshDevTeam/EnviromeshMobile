@@ -3,6 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GreenHouse.App">
     <Application.Resources>
+        <Style TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=Black, Light=#09FF00}"></Setter>
+        </Style>
 
+        <Style TargetType="Frame">
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=#53595c, Light=#B9F6CA}"/>
+            <Setter Property="BorderColor" Value="Black"/>
+            <Setter Property="Margin" Value="20, 0"></Setter>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark=WhiteSmoke, Light=Black}"></Setter>
+            <!--<Setter Property="HorizontalOptions" Value="Center"></Setter>
+            <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>-->
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=#BB86FC, Light=#263238}"></Setter>
+        </Style>
+
+        <Style TargetType="Switch">
+            <Setter Property="OnColor" Value="{AppThemeBinding Dark=#BB86FC, Light=#66696b}"></Setter>
+            <!--Unfortunately cant control light mode toggle state onColor because of backgroundcolor of frame-->
+            <!--BB86FC Light violet-->
+            <Setter Property="ThumbColor" Value="{AppThemeBinding Dark=#664B86, Light=Black}"></Setter>
+        </Style>
+        
     </Application.Resources>
 </Application>
