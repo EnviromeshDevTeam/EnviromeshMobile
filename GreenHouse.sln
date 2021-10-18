@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenHouse.Android", "Green
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenHouse.iOS", "GreenHouse.iOS\GreenHouse.iOS.csproj", "{7C734980-DCE7-46C7-AF8B-C5F53FA93706}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenHouse", "GreenHouse\GreenHouse.csproj", "{9FA942C0-0265-4C81-90CA-535C6D98CC87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreenHouse", "GreenHouse\GreenHouse.csproj", "{9FA942C0-0265-4C81-90CA-535C6D98CC87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

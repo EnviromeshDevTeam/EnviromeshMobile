@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,8 +13,25 @@ namespace GreenHouse
             InitializeComponent();
 
             MainPage = new NavigationPage();
+
+            themeSetup();
         }
 
+        /// <summary>
+        /// Takes in user preference and sets our App.Xaml elements to either have a light or dark mode theme
+        /// </summary>
+        public void themeSetup()
+        {
+            bool dark = Preferences.Get("settings_Theme", false);
+            if (dark)
+            {
+                App.Current.UserAppTheme = OSAppTheme.Dark;
+            }
+            else
+            {
+                App.Current.UserAppTheme = OSAppTheme.Light;
+            }
+        }
 
         private void NavigateMainPage()
         {

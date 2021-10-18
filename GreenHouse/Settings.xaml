@@ -3,27 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GreenHouse.Settings">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="{AppThemeBinding Dark=Black, Light=DarkGray}">
-            <Label Text="Preferences" FontSize="25" HorizontalTextAlignment="Center" Padding="50"/>
+        <StackLayout>
+            <Frame Margin="0,0,0,10" CornerRadius="0">
+                <Label Text="Preferences" FontSize="25" HorizontalTextAlignment="Center" Padding="30"/>
+            </Frame>
 
-
-            <Grid>
+            <!--<Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>-->
                 
-                <Label Text="Temperature Unit" FontSize="26" Grid.Row="0"/>
+                <!--<Label Text="Temperature Unit" FontSize="26" Grid.Row="0"/>
                 <Label Text="Fahrenheint To Celsius" FontSize="15" Grid.Row="1" Grid.Column="0"/>
-                <Switch x:Name="metricSwitch" IsToggled="False" Grid.Row="1" Grid.Column="1"/>
-
-                <Label Text="Theme" FontSize="26" Grid.Row="2" Grid.Column="0"/>
-                <Label Text="Dark Mode" FontSize="15" Grid.Row="3" Grid.Column="0"/>
-                <Switch x:Name="themeswitch" IsToggled="False" Grid.Row="3" Grid.Column="1" Toggled="themeswitch_Toggled"/>
-            </Grid>
+                <Switch x:Name="metricSwitch" IsToggled="False" Grid.Row="1" Grid.Column="1"/>-->
+            <Frame Margin="0">
+                <StackLayout BackgroundColor="Transparent">
+                    <Label Text="Theme" FontSize="26"/>
+                    <Label Text="Dark Mode" FontSize="15" />
+                    <Switch x:Name="themeswitch" IsToggled="False" Toggled="themeswitch_Toggled"/>
+                </StackLayout>
+            </Frame>
+            <!--Grid.Row="2" Grid.Column="0"
+            Grid.Row="3" Grid.Column="0"
+            -->
+            <!--</Grid>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

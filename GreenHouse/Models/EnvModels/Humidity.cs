@@ -32,39 +32,39 @@ namespace GreenHouse.Models.EnvModels
             switch (_chosenTimescale)
             {
                 case "1H":
-                    foreach (PlotPoint item in _1H)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_1H[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 case "4H":
-                    foreach (PlotPoint item in _4H)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_4H[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 case "12H":
-                    foreach (PlotPoint item in _12H)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_12H[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 case "24H":
-                    foreach (PlotPoint item in _24H)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_24H[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 case "6D":
-                    foreach (PlotPoint item in _6D)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_6D[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 case "30D":
-                    foreach (PlotPoint item in _30D)
+                    for (int i = 0; i < 6; i++)
                     {
-                        ChartPlotPoints.Add(item.Convert2ChartEntry());
+                        ChartPlotPoints.Add(_30D[i].Convert2ChartEntry(i));
                     }
                     return ChartPlotPoints;
                 default:

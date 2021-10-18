@@ -4,25 +4,18 @@
              x:Class="GreenHouse.Devices" >
     <ContentPage.Content>
 
-        <StackLayout BackgroundColor="LightSkyBlue">
-            <Label Text="Please Choose Device to View Data" FontSize="25" HorizontalOptions="Center"/>
-
-
-            <Frame HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="10" BackgroundColor="Black">
-                <Button Text="Device 1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Black" WidthRequest="80" Clicked="device1_clicked" FontSize="18"/>
+        <StackLayout>
+            <Frame Margin="0" CornerRadius="0">
+                <Label Text="Select a Device to view Data" HorizontalTextAlignment="Center" FontSize="25"/>
             </Frame>
 
-            <Frame HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="10" BackgroundColor="Black">
-                <Button Text="Device 2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Black" WidthRequest="80" Clicked="device1_clicked" FontSize="18"/>
-            </Frame>
+            <Button Text="Device 1" Clicked="device1_clicked" FontSize="15" HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0"/>
 
-            <Frame HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="10" BackgroundColor="Black">
-                <Button Text="Device 3" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Black" WidthRequest="80" Clicked="device1_clicked" FontSize="18"/>
-            </Frame>
+            <Button Text="Device 2" Clicked="Button_Clicked" FontSize="15" HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0"/>
 
-            <Frame HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="0" BackgroundColor="Black">
-                <Button Text="+" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Black" WidthRequest="80" Clicked="device1_clicked" FontSize="50"/>
-            </Frame>
+            <Button Text="Device 3" Clicked="Button_Clicked" FontSize="18" HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0"/>
+
+            <!--Devices can only be added from Admin Auth / Token Through website-->
 
 
         </StackLayout>

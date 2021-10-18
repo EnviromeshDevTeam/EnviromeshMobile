@@ -8,7 +8,6 @@ using SkiaSharp;
 
 namespace GreenHouse.Models.EnvModels
 {
-    //TODO: No point in this class
      public class PlotPoint
      {
         [JsonProperty("date")]
@@ -23,16 +22,17 @@ namespace GreenHouse.Models.EnvModels
             PlotValue = _plotValue;
         }
 
-        public ChartEntry Convert2ChartEntry()
+        public ChartEntry Convert2ChartEntry(int _index)
         {
+            List<string> list_DarkHexCodes = new List<string> { "#770087", "#9600B3", "#AA00D7", "C030ED", "#DC86FA", "#FBF2FF" };
             var random = new Random();
             ChartEntry entryObject = new ChartEntry(PlotValue)
             {
                 Label = DateString,
                 ValueLabel = PlotValue.ToString(),
-                Color = SKColor.Parse(String.Format("#{0:X6}", random.Next(0x1000000)))
+                Color = SKColor.Parse(list_DarkHexCodes[_index])
             };
-            return entryObject;
+        return entryObject;
         }
         //Color Randomizer from hex colors assign to color
         //Get set random color, Why dont we just overwrite ChartEntry
