@@ -39,7 +39,7 @@ namespace GreenHouse
         }
 
 
-        private void setPref(string _settingKey, dynamic _settingValue)
+        private void setPref(string _settingKey, bool _settingValue)
         {
             Preferences.Set(_settingKey, _settingValue);
         }
