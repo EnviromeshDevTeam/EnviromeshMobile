@@ -2,6 +2,8 @@
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms.Internals;
+using GreenHouse.Logging;
 
 namespace GreenHouse
 {
@@ -31,6 +33,7 @@ namespace GreenHouse
             {
                 App.Current.UserAppTheme = OSAppTheme.Light;
             }
+            DependencyService.Get<IXamarinLog>().Log(this, "Theme Setup loaded!");
         }
 
         private void NavigateMainPage()

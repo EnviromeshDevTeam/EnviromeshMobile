@@ -1,4 +1,5 @@
 ﻿using GreenHouse.Backend;
+using GreenHouse.Logging;
 using GreenHouse.Models;
 using Microcharts;
 using Microcharts.Forms;
@@ -16,6 +17,7 @@ namespace GreenHouse
 {
     public partial class DeviceGraphs : ContentPage
     {
+
         public int currDevice { get; set; } = 1;
         public string currTimescale { get; set; } = "1H";
         private GraphHandler GraphDataObj { get; set; }
@@ -39,6 +41,7 @@ namespace GreenHouse
             }
             catch (Exception e)
             {
+                DependencyService.Get<IXamarinLog>().Error(this, "Error caught here in app");
                 Console.WriteLine(e.Message);
                 await DisplayAlert("Error", $"{e.Message}", "OK!");
             }
@@ -46,6 +49,7 @@ namespace GreenHouse
         public DeviceGraphs()
         {
             InitializeComponent();
+            DependencyService.Get<IXamarinLog>().Log(this, "DeviceGraphs attempted loadi ng");
         }
 
         private void UpdateUI()
@@ -80,6 +84,7 @@ namespace GreenHouse
             Chart_TVOC.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[3], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 35, PointSize = 25, LabelColor = dateColor, BackgroundColor = transparentCol };
 
             Chart_Moisture.Chart = new LineChart { Entries = GraphDataObj.GraphReadyData[4], ValueLabelOrientation = Orientation.Vertical, LabelTextSize = 35, PointSize = 25, LabelColor = dateColor, BackgroundColor = transparentCol };
+            DependencyService.Get<IXamarinLog>().Log(this, "Devicegraphs loaded");
         }
 
         private async void RefreshView_Dashboard_Refreshing(object sender, EventArgs e)
@@ -110,7 +115,8 @@ namespace GreenHouse
 
         private async void FailedConnectFunc (Exception _e)
             {
-                Console.WriteLine(_e.Message);
+            DependencyService.Get<IXamarinLog>().Error(this, "Failed to Fetch/Deserialize, Probably no internet");
+            Console.WriteLine(_e.Message);
                 await DisplayAlert("No Internet", "Please reconnect and then pull down to refresh", "Ok!"); 
     }
 }

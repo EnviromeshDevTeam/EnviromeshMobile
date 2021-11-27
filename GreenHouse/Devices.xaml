@@ -13,7 +13,7 @@
 
             <Button Text="Device 2" Clicked="Button_Clicked" FontSize="15" HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0"/>
 
-            <Button Text="Device 3" Clicked="Button_Clicked" FontSize="18" HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0"/>
+            <Button Text="Device 3" Clicked="Button_Clicked" FontSize="15" HeightRequest="120" WidthRequest="120" CornerRadius="90" HorizontalOptions="Center" VerticalOptions="Center" Margin="0"/>
 
             <!--Devices can only be added from Admin Auth / Token Through website-->
 

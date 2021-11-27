@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GreenHouse.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,16 @@ namespace GreenHouse
         }
 
         /// <summary>
-        /// TODO: Try catch and Log
+        /// TODO: Try catch and 
+        /// 
         /// </summary>
         private async void loadToggleStates()
         {
             if (!checkForPref("settings_Theme"))
             {
+                IXamarinLog Logger = DependencyService.Get<IXamarinLog>();
+                Logger.Error(this, "Pref key does not exist yet");
+                Logger.Warning(this, "Pref key does not exist yet");
                 await DisplayAlert("DEBUG:", "CHECK Pref Key", "Ok!");
                 return; 
             }

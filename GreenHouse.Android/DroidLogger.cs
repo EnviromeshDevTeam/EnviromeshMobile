@@ -10,12 +10,13 @@ using System.Linq;
 using System.Text;
 using Android.Util;
 using GreenHouse.Logging;
+using GreenHouse.Droid;
 
-[assembly: Xamarin.Forms.Dependency(typeof(IXamarinLog))]
+[assembly: Xamarin.Forms.Dependency(typeof(DroidLogger))]
 
 namespace GreenHouse.Droid
 {
-    class DroidLogger : IXamarinLog
+    public class DroidLogger : IXamarinLog
     {
         //ANDROID IMPLEMENTATION
         //TODO: Anytime a Debug, Error or Warning comes up we call these and log to file
