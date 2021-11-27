@@ -12,6 +12,10 @@ namespace GreenHouse.Backend
 {
     //Class fetches data returns List Chart Entries?
     //ChartEntry Types DateTime, Value, Color 
+
+    /// <summary>
+    /// Initiate HTTP Fetch and Deserialize into ROot
+    /// </summary>
     public class DeviceDataFetch
     {
         public static readonly HttpClient client = new HttpClient();

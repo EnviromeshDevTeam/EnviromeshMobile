@@ -6,6 +6,9 @@ using System.Text;
 
 namespace GreenHouse.Models.EnvModels
 {
+    /// <summary>
+    /// Each 5 of these are environment variables with custom variables for manipulating API JSON into PlotPoints
+    /// </summary>
     public class CO2
     {
         // TODO: WE convert all EnvModels to inherit from one superclass? Saves alot of this code?

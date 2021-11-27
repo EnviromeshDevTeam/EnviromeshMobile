@@ -15,6 +15,9 @@ using Xamarin.Forms;
 
 namespace GreenHouse
 {
+    /// <summary>
+    /// Page to Contact API and Initialize Graphs
+    /// </summary>
     public partial class DeviceGraphs : ContentPage
     {
 
@@ -23,12 +26,10 @@ namespace GreenHouse
         private GraphHandler GraphDataObj { get; set; }
 
 
-        //Do we initialize graphs here?
         /// <summary>
         /// Loads Before InitializeComponent() Create Initial API ref
         /// </summary>
         
-        //erroring at Object ref Not set to an instance of object. Dependant on our loading of items
         protected override async void OnAppearing()
         {
             base.OnAppearing();

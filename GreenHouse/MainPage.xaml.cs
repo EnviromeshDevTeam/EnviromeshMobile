@@ -8,6 +8,9 @@ using Xamarin.Forms;
 
 namespace GreenHouse
 {
+    /// <summary>
+    /// ENTRYPOINT
+    /// </summary>
     public partial class MainPage : ContentPage
     {
         public MainPage()

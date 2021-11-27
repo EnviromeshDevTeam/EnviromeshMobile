@@ -9,6 +9,8 @@ namespace GreenHouse.Models
     {
         //Scales for multiple devices
 
+        //ROOT of JSOn
+
          [JsonProperty("Devices")]
         public List<Device> Devices { get; set; }
 

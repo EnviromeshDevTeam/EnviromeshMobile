@@ -10,6 +10,8 @@ using Xamarin.Forms.Xaml;
 namespace GreenHouse
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
+    ///TO Select a Device
     public partial class Devices : ContentPage
     {
         public Devices()

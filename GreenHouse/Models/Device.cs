@@ -7,6 +7,9 @@ using System.Text;
 
 namespace GreenHouse.Models
 {
+    /// <summary>
+    /// Scalable, There may be multiple devices in JSON API
+    /// </summary>
     public class Device
     {
         [JsonProperty("Temperature")]

@@ -8,6 +8,9 @@ using SkiaSharp;
 
 namespace GreenHouse.Models.EnvModels
 {
+    /// <summary>
+    /// To Manipulate API Json Into PlotPoints
+    /// </summary>
      public class PlotPoint
      {
         [JsonProperty("date")]

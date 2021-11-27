@@ -18,7 +18,8 @@ namespace GreenHouse.Droid
 {
     public class DroidLogger : IXamarinLog
     {
-        //ANDROID IMPLEMENTATION
+        //ANDROID IMPLEMENTATION of Logging which gets directed based on DependencyService Detection of current Device
+
         //TODO: Anytime a Debug, Error or Warning comes up we call these and log to file
         //TODO: We make one for IOS as well??? OPTIONAL
         public void Debug(object _sender, string _message)

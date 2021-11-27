@@ -14,6 +14,9 @@ using Com.Airbnb.Lottie;
 
 namespace GreenHouse.Droid
 {
+    /// <summary>
+    /// GreenHouse Splash Page
+    /// </summary>
     [Activity(Theme = "@style/Theme.Splash",
         MainLauncher =true,
         NoHistory =true)]

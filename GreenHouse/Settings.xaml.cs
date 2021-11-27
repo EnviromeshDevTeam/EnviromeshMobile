@@ -10,6 +10,9 @@ using Xamarin.Forms.Xaml;
 
 namespace GreenHouse
 {
+    /// <summary>
+    /// To Change Settings
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Settings : ContentPage
     {
